@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 
+  aisle: false
+  reserved: false
+
+two:
+  number: 
+  aisle: false
+  reserved: false
