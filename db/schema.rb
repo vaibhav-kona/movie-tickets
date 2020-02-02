@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_02_075309) do
+ActiveRecord::Schema.define(version: 2020_02_02_080017) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "rows", force: :cascade do |t|
     t.string "name"
@@ -31,6 +34,9 @@ ActiveRecord::Schema.define(version: 2020_02_02_075309) do
     t.boolean "reserved"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "row_id", null: false
+    t.index ["row_id"], name: "index_seats_on_row_id"
   end
 
+  add_foreign_key "seats", "rows"
 end
