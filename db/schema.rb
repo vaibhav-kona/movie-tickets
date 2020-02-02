@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_02_074145) do
+ActiveRecord::Schema.define(version: 2020_02_02_075309) do
+
+  create_table "rows", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "screens", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_screens_on_name", unique: true
+  end
 
   create_table "seats", force: :cascade do |t|
     t.integer "number"
